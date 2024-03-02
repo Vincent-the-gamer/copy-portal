@@ -32,15 +32,41 @@ git clone https://github.com/Vincent-the-gamer/copy-portal.git
 pnpm i
 ```
 
-3. In remote device, run `pnpm run server` to start the server.
+3. config your links in `config.ts`
+```typescript
+/**
+ * proxy
+ */
 
-4. In your device, edit `client.ts`, modify `target` to your remote device host and port.
+// if you don't need proxy, ignore this.
+export const SMEE_PROXY_LINK = "your smee link"
 
-```shell
-const target = "http://localhost:8080"
+/**
+ * server
+ */
+
+// required!
+export const SERVER_HOST = "127.0.0.1"
+export const SERVER_PORT = 8080
+export const SERVER_LINK = `http://${SERVER_HOST}:${SERVER_PORT}`
+
+/**
+ * client
+ */
+
+// required!
+export const CLIENT_HOST = "127.0.0.1"
+export const CLIENT_PORT = 8080
+export const CLIENT_TARGET = `http://${CLIENT_HOST}:${CLIENT_PORT}`
 ```
 
-Then, to send your current clipboard text, run `pnpm run client`.
+4. In remote device, run `pnpm run server` to start the server.
+
+4. In your device, to send your current clipboard text, run `pnpm run client`.
+
+# Proxy 
+
+If you want to proxy your local service, use `webhook forward`: [https://smee.io/](https://smee.io/).
 
 # License
 

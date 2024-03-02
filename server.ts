@@ -1,5 +1,6 @@
 import express from "express"
 import clipboard from "clipboardy"
+import { SERVER_HOST, SERVER_PORT } from "./config"
 
 const app = express()
 
@@ -30,9 +31,7 @@ app.post("/", (req: any, res: any) => {
 /**
  * main
  */
-const host = "0.0.0.0"
-const port = 8080
 
-app.listen(port, () => {
-    console.log(`Server started: http://${host}:${port}`)
+app.listen(SERVER_PORT, () => {
+    console.log(`Server started: http://${SERVER_HOST}:${SERVER_PORT}`)
 })
