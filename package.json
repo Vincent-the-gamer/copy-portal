@@ -2,12 +2,11 @@
   "name": "copy-portal",
   "version": "0.1.0",
   "description": "Send text to another device's clipboard.",
-  "main": "main.ts",
   "scripts": {
     "client": "esno client.ts",
     "server": "esno server.ts"
   },
-  "keywords": [],
+  "keywords": ["clipboard", "remote"],
   "author": "",
   "license": "ISC",
   "devDependencies": {
