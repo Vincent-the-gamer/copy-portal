@@ -48,25 +48,26 @@ export const SMEE_PROXY_LINK = "your smee link"
 // required!
 export const SERVER_HOST = "127.0.0.1"
 export const SERVER_PORT = 8080
-export const SERVER_LINK = `http://${SERVER_HOST}:${SERVER_PORT}`
 
 /**
  * client
  */
 
-// required!
-export const CLIENT_HOST = "127.0.0.1"
-export const CLIENT_PORT = 8080
-export const CLIENT_TARGET = `http://${CLIENT_HOST}:${CLIENT_PORT}`
+// fill in the server address where you've deployed.
+export const CLIENT_TARGET = "http://localhost:8080"
 ```
 
 4. In remote device, run `pnpm run server` to start the server.
 
-4. In your device, to send your current clipboard text, run `pnpm run client`.
+5. In your device, to send your current clipboard text, run `pnpm run client`.
 
 # Proxy 
 
 If you want to proxy your local service, use `webhook forward`: [https://smee.io/](https://smee.io/).
+
+Edit `config.ts`, fill your link given by `smee.io` in `SMEE_PROXY_LINK`, then change `CLIENT_TARGET` to your `SMEE_PROXY_LINK`
+
+Finally, run `pnpm run proxy` and `pnpm run server` to make your smee link a public API. 
 
 # License
 

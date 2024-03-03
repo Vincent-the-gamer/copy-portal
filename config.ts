@@ -19,6 +19,4 @@ export const SERVER_LINK = `http://${SERVER_HOST}:${SERVER_PORT}`
  */
 
 // required!
-export const CLIENT_HOST = "127.0.0.1"
-export const CLIENT_PORT = 8080
-export const CLIENT_TARGET = `http://${CLIENT_HOST}:${CLIENT_PORT}`
+export const CLIENT_TARGET = "http://localhost:8080"
