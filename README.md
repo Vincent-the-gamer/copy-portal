@@ -65,9 +65,9 @@ export const CLIENT_TARGET = "http://localhost:8080"
 
 If you want to proxy your local service, use `webhook forward`: [https://smee.io/](https://smee.io/).
 
-Edit `config.ts`, fill your link given by `smee.io` in `SMEE_PROXY_LINK`, then change `CLIENT_TARGET` to your `SMEE_PROXY_LINK`
+For server side, edit `config.ts`, fill your link given by `smee.io` in `SMEE_PROXY_LINK`, then run `pnpm run proxy` and `pnpm run server` to make your smee link a public API.
 
-Finally, run `pnpm run proxy` and `pnpm run server` to make your smee link a public API. 
+For client side, change `CLIENT_TARGET` to your `SMEE_PROXY_LINK` and run `pnpm run client`.
 
 # License
 
