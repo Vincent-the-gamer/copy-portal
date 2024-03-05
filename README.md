@@ -35,17 +35,8 @@ pnpm i
 3. config your links in `config.ts`
 ```typescript
 /**
- * proxy
- */
-
-// if you don't need proxy, ignore this.
-export const SMEE_PROXY_LINK = "your smee link"
-
-/**
  * server
  */
-
-// required!
 export const SERVER_HOST = "127.0.0.1"
 export const SERVER_PORT = 8080
 
@@ -54,6 +45,7 @@ export const SERVER_PORT = 8080
  */
 
 // fill in the server address where you've deployed.
+// if nginx proxied, fill in your nginx api address.
 export const CLIENT_TARGET = "http://localhost:8080"
 ```
 
@@ -63,11 +55,17 @@ export const CLIENT_TARGET = "http://localhost:8080"
 
 # Proxy 
 
-If you want to proxy your local service, use `webhook forward`: [https://smee.io/](https://smee.io/).
+Use `Nginx`. Copy the content of `nginx.conf` to your local nginx config file, and change `proxy_pass` to your api address.
 
-For server side, edit `config.ts`, fill your link given by `smee.io` in `SMEE_PROXY_LINK`, then run `pnpm run proxy` and `pnpm run server` to make your smee link a public API.
-
-For client side, change `CLIENT_TARGET` to your `SMEE_PROXY_LINK` and run `pnpm run client`.
+```nginx
+location /copy-portal {
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_method POST;
+    proxy_pass http://127.0.0.1:8080/;  # same as SERVER_LINK
+}
+```
 
 # License
 
