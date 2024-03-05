@@ -8,11 +8,11 @@ const app = express()
 app.use(express.json())
 
 // cross origin
-app.all("*",function(req,res,next){
-    res.header('Access-Control-Allow-Origin','*')
-    res.header('Access-Control-Allow-Headers','content-type')
-    res.header('Access-Control-Allow-Methods','DELETE,PUT,POST,GET,OPTIONS')
-    if(req.method.toLowerCase() == 'options')
+app.all("*", function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*')
+    res.header('Access-Control-Allow-Headers', 'content-type')
+    res.header('Access-Control-Allow-Methods', 'DELETE,PUT,POST,GET,OPTIONS')
+    if (req.method.toLowerCase() == 'options')
         res.sendStatus(200)
     else
         next()

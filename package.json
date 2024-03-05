@@ -1,6 +1,6 @@
 {
   "name": "copy-portal",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Send text to another device's clipboard.",
   "scripts": {
     "client": "esno client.ts",

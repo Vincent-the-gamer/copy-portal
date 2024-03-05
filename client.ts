@@ -5,15 +5,14 @@ import https from "https"
 
 // Allow HTTPS self-signed certificate
 const myAxios = axios.create({
-    httpsAgent: new https.Agent({  
-      rejectUnauthorized: false
+    httpsAgent: new https.Agent({
+        rejectUnauthorized: false
     })
-  });
+});
 
 const currentText = clipboard.readSync()
 
-
-if(currentText) {
+if (currentText) {
     myAxios.post(CLIENT_TARGET, {
         text: currentText
     }).then(res => {
