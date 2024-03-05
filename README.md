@@ -55,7 +55,10 @@ export const CLIENT_TARGET = "http://localhost:8080"
 
 # Proxy 
 
-Use `Nginx`. Copy the content of `nginx.conf` to your local nginx config file, and change `proxy_pass` to your api address.
+Use `Nginx` + `NAT Traversal`. 
+
+## Nginx
+Copy the content of `nginx.conf` to your local nginx config file, and change `proxy_pass` to your API address.
 
 ```nginx
 location /copy-portal {
@@ -66,6 +69,13 @@ location /copy-portal {
     proxy_pass http://127.0.0.1:8080/;  # same as SERVER_LINK
 }
 ```
+
+## Expose your local API to NAT
+
+To setup a `NAT Traversal`, you can use some service like `frp + cloud server`, `sakurafrp` or etc.
+
+Then, expose your nginx proxied API to NAT, so that you can send your clipboard to remote device.
+
 
 # License
 
