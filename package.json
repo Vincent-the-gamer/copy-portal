@@ -14,6 +14,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^20.11.24",
     "axios": "^1.6.7",
     "clipboardy": "^4.0.0",
     "esno": "^4.0.0",
