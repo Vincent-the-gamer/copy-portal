@@ -72,7 +72,7 @@ location /copy-portal {
 
 ## Expose your local API to NAT
 
-To setup a `NAT Traversal`, you can use some service like `frp + cloud server`, `sakurafrp` or etc.
+To set up a `NAT Traversal`, you can use some services like `frp + cloud server`, `sakurafrp` or etc.
 
 Then, expose your nginx proxied API to NAT, so that you can send your clipboard to remote device.
 
